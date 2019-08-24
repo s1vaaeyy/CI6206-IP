@@ -1,0 +1,62 @@
+
+Generating ssh key and adding it to the ssh agent:
+
+1.Git command to generate ssh key
+ssh-keygen -t rsa -b 4096 -C "VidyakasilingamNTU@gmail.com"(Mail id of git account)
+
+2.# start the ssh-agent in the background
+$ eval $(ssh-agent -s)
+> Agent pid 59566
+
+Add your SSH private key to the ssh-agent. If you created your key with a different name, or if you are adding an existing key that has a different name, replace id_rsa in the command with the name of your private key file.
+
+3.$ ssh-add ~/.ssh/id_rsa
+
+
+Copy the SSH key to your clipboard.
+
+If your SSH key file has a different name than the example code, modify the filename to match your current setup. When copying your key, don't add any newlines or whitespace.
+
+4.$ clip < ~/.ssh/id_rsa.pub
+# Copies the contents of the id_rsa.pub file to your clipboard
+
+Or open the id_rsa.pub file generated in C:\Users\Vidya and copy the SSH key
+Add the SSH key to your account by going to settings and clicking the ssh/gpg in personal settings
+
+
+Cloning a file :
+$ git clone --recurse-submodules git@github.com:s1vaaeyy/CI6206-IP.git
+
+Creating a branch
+git checkout -b Dev_Branch_1_Vid(Branch name)
+
+Another option to create a branch:
+Creating the branch git branch branch name
+and then switching to the branch using git checkout 
+
+Switching out to a branch
+git checkout Dev_Branch_1_Vid
+
+Looking at the files which are present in local but not in the server
+git status
+
+Before commiting
+Adding the file changes we made to a current changeset
+$ git add "Github Commands.txt"(File name)
+
+To add all the files that have been changed to the current changeset
+$ git add -a
+
+Commmiting the changeset
+ git commit -m "Vidya's first commit"(m stands for message, similar to giving a name for the changeset)
+
+Pushing the changes into the server
+Origin specifies the server. Here we are specifying the local branch name and what name has to be given to the branch in the server on commit
+$ git push origin Dev_Branch_1_Vid:Dev_Branch_1_Vid
+
+
+To pull the latest branch from the server:
+Move to the branch and then give the command
+git pull
+
+
